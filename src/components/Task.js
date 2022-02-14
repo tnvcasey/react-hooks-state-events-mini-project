@@ -1,11 +1,14 @@
 import React from "react";
+import {useState} from "react"
 
-function Task(props) {
+function Task({ category, text, deleteTasks }) {
+
+
   return (
     <div className="task">
-      <div className="label">{props.taskObj.category}</div>
-      <div className="text">{props.taskObj.text}</div>
-      <button className="delete">X</button>
+      <div className="label">{category}</div>
+      <div className="text">{text}</div>
+      <button className="delete" onClick={deleteTasks}>X</button>
     </div>
   );
 }

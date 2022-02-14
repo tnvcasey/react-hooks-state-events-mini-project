@@ -4,11 +4,12 @@ import Task from "./Task"
 
 
 
-function TaskList(props) {
+function TaskList({ tasks, deleteTasks }) {
   return (
     <div className="tasks">
-      {props.allOfTasks.map(task => <Task key={task.name} taskObj={task}/>)}
-
+      {tasks.map((t,i) => {
+      return <Task key={i} {...t} deleteTasks={() => deleteTasks(t)} />
+      })}
     </div>
   );
 }
